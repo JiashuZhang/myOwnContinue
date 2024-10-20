@@ -1,0 +1,10 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: ContinueForEclipse
+Bundle-SymbolicName: continueForEclipse;singleton:=true
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: org.eclipse.ui,
+ org.eclipse.core.runtime,
+ org.eclipse.jface.text
+Automatic-Module-Name: continueForEclipse
+Bundle-RequiredExecutionEnvironment: JavaSE-17
