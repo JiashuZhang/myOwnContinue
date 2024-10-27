@@ -5,6 +5,7 @@ Bundle-SymbolicName: continueForEclipse;singleton:=true
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: org.eclipse.ui,
  org.eclipse.core.runtime,
- org.eclipse.jface.text
+ org.eclipse.jface.text,
+ com.google.gson;bundle-version="2.8.9"
 Automatic-Module-Name: continueForEclipse
 Bundle-RequiredExecutionEnvironment: JavaSE-17

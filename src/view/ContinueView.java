@@ -71,7 +71,9 @@ public class ContinueView extends ViewPart {
     }
 
     private void sendMessage() {
-        controller.sendMessage(inputText.getText());
+        String message = inputText.getText();
+        controller.sendMessage(message);
+        clearInputText();
     }
 
     public void clearInputText() {
@@ -82,7 +84,13 @@ public class ContinueView extends ViewPart {
         if (messageViewer != null && !messageViewer.getTextWidget().isDisposed()) {
             messageViewer.getTextWidget().getDisplay().asyncExec(() -> {
                 String currentText = messageViewer.getDocument().get();
-                messageViewer.getDocument().set(currentText + "\n" + message);
+                if (!currentText.isEmpty()) {
+                    currentText += "\n\n";  // 添加额外的换行以分隔消息
+                }
+                messageViewer.getDocument().set(currentText + message);
+                
+                // 滚动到最新消息
+                messageViewer.getTextWidget().setTopIndex(messageViewer.getTextWidget().getLineCount() - 1);
             });
         }
     }
